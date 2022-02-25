@@ -18,8 +18,6 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - environment: test
-            runner: ubuntu-latest
           - environment: prod
             runner: ubuntu-18.04
     env:
@@ -42,11 +40,11 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         id: apply
-        run: terraform apply -auto-approve -input=false
+        run: terraform apply -auto-approve -input=false -var-file=${{ matrix.environment }}/terraform.tfvars -no-color
       - name: Terraform destroy
         if: github.ref == 'refs/heads/destroy'
         id: destroy
-        run: terraform destroy -auto-approve -input=false
+        run: terraform destroy -auto-approve -input=false -var-file=${{ matrix.environment }}/terraform.tfvars -no-color
   comment:
     runs-on: ubuntu-latest
     needs: terraform
