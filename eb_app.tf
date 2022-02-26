@@ -5,7 +5,6 @@ terraform {
       version = "~> 3.27"
     }
   }
-
 }
 
 # AWS Provider configuration
@@ -38,7 +37,6 @@ resource "aws_elastic_beanstalk_application_version" "eb_app_ver" {
   key         = aws_s3_bucket_object.eb_bucket_obj.id
   application = aws_elastic_beanstalk_application.eb_app.name
   name        = "enes-eb-tf-app-version-lable"
-
 }
 
 resource "aws_elastic_beanstalk_environment" "tfenv" {

@@ -1,2 +1,0 @@
-environment = "test"
-project     = "enes"
