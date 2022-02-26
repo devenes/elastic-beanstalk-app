@@ -2,9 +2,14 @@
 
 ![diagram](/diagram.jpg)
 
+Check the output of the application: http://enes-eb-tf-env.eba-pefwzvwu.us-east-2.elasticbeanstalk.com/Enes
+
+
 # Getting Started with Terraform
 HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
 Terraform creates and manages resources on cloud platforms and other services through their application programming interfaces (APIs). Providers enable Terraform to work with virtually any platform or service with an accessible API.
+
+Check out the [Terraform Documentation](https://www.terraform.io/docs/intro/getting-started.html) for more information.
 
 <br>
 
@@ -17,6 +22,8 @@ Elastic Beanstalk supports applications developed in Go, Java, .NET, Node.js, PH
 
 You can interact with Elastic Beanstalk by using the Elastic Beanstalk console, the AWS Command Line Interface (AWS CLI), or eb, a high-level CLI designed specifically for Elastic Beanstalk.
 
+Check out the [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) documentation for more information.
+
 <br>
 
 # Getting started with GitHub Actions
@@ -25,6 +32,8 @@ GitHub Actions is a continuous integration and continuous delivery (CI/CD) platf
 GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository.
 
 GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure.
+
+Check out the [GitHub Actions Documentation](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions) for more information.
 
 --------------------------------------------------------------------------------
 - You can deploy this application with Terraform on AWS with Elastic Beanstalk.
@@ -38,8 +47,8 @@ programmatic, and portable way to create, destroy, and update infrastructure.
 We use S3 Buckets to store our application code and configuration files. 
 And we use IAM Roles to give permissions to our EC2 Instances. 
 --------------------------------------------------------------------------------
-- Elastic Beanstalk is a web service that makes it easy to deploy, manage, and scale
-applications on Amazon's Elastic Cloud Compute Service. S3 buckets are used to store
-application code and configuration files, and IAM roles are used to give permissions
-to EC2 instances. Elastic Beanstalk creates application environments with codes that
-are stored in S3 buckets and run on EC2 instances.
+- Elastic Beanstalk is a service that makes it easy to deploy, manage, and scale
+applications on Amazon's Elastic Cloud Compute Service. 
+- S3 buckets are used to store application code and configuration files.
+- IAM roles are used to authorize Terraform's operations. 
+- Elastic Beanstalk creates the application environment with code stored in S3 buckets and makes it run on EC2 instances.
