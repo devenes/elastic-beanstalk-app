@@ -1,2 +1,0 @@
-terraform token:
-Hk3936kBTSNEKQ.atlasv1.GrabH3Pvm8OzyPmuKyL1WTQ87vKzPYn0AXQJAACFCMhe1KCRH7EjsgexcrOSDnV6eKg
