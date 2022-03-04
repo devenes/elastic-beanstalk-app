@@ -2,7 +2,6 @@
 
 ![diagram](/diagram.jpg)
 
-Check the output of the application: http://enes-eb-tf-env.eba-pefwzvwu.us-east-2.elasticbeanstalk.com/Enes
 
 
 # Getting Started with Terraform
