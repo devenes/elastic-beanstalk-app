@@ -1,3 +1,3 @@
 bucket = "enes-mybucket"
-key    = "ecs/prod/terraform.tfstate"
+key    = "path/to/my/key"
 region = "us-east-2"
