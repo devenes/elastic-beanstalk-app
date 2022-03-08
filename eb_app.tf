@@ -6,11 +6,11 @@ terraform {
     }
   }
 
-  # backend "s3" {
-  #   bucket = "enes-mybucket"
-  #   key    = "path/to/my/key"
-  #   region = "us-east-2"
-  # }
+  backend "s3" {
+    bucket = "enes-mybucket"
+    key    = "ecs/prod/terraform.tfstate"
+    region = "us-east-2"
+  }
 }
 
 # AWS Provider configuration
@@ -49,7 +49,7 @@ resource "aws_elastic_beanstalk_environment" "tfenv" {
   name        = "enes-eb-tf-env"
   application = aws_elastic_beanstalk_application.eb_app.name
   # Define current version of platform
-  solution_stack_name = "64bit Amazon Linux 2 v3.3.10 running Python 3.8"
+  solution_stack_name = "64bit Amazon Linux 2 v3.3.11 running Python 3.8"
   description         = "environment for flask app"
   version_label       = aws_elastic_beanstalk_application_version.eb_app_ver.name
 
