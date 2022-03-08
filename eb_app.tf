@@ -5,12 +5,12 @@ terraform {
       version = "~> 3.27"
     }
   }
-  
-  backend "s3" {
-    bucket = "enes-mybucket"
-    key    = "path/to/my/key"
-    region = "us-east-2"
-  }
+
+  # backend "s3" {
+  #   bucket = "enes-mybucket"
+  #   key    = "path/to/my/key"
+  #   region = "us-east-2"
+  # }
 }
 
 # AWS Provider configuration
