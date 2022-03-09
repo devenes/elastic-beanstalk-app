@@ -63,7 +63,7 @@ You need store your Terraform state in S3 bucket that you created previously. S3
 
 ```
 bucket = "enes-mybucket"
-key    = "ecs/prod/terraform.tfstate"
+key    = "path/to/my/key"
 region = "us-east-2"
 ```
 
