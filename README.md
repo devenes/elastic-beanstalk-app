@@ -75,14 +75,12 @@ Check the [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html)
 
 You need to define your application version number and platform operating system version number on AWS that you want to use for deployment under `aws_elastic_beanstalk_environment` source section in main Terraform file called `eb_app.tf` in this project. 
 
-- Stacking fails in Terraform stages when you type a value for `solution_stack_name` if it is not valid or not supported in Amazon Web Services (AWS).
+- Deployment fails in Terraform stages when you type a value for `solution_stack_name` if it is not valid or not supported in Amazon Web Services (AWS).
 
 ```
 solution_stack_name = "64bit Amazon Linux 2 v3.3.11 running Python 3.8"
 description         = "environment for flask app"
 ```
-
-- If you write something doesn't match with the AWS documentation, Terraform build will fail.
 
 ---
 
