@@ -37,9 +37,9 @@ AWS_SECRET_ACCESS_KEY
 
 # Trigger your Terraform deployment with GitHub Actions
 
-When you create GitHub Action workflow, you can run `Terraform Apply` and `Terraform Destroy` stages automatically when you push to your GitHub repository. You can seperate the stages with adding the following commands to your GitHub Action workflow:
+When you create GitHub Action workflow, you can run `Terraform Apply` and `Terraform Destroy` stages automatically by pushing your code to GitHub repository. You can seperate  stages with adding the following commands to your GitHub Action workflow:
 
-This will run `Terraform Apply` command when you push your code to the `main` branch:
+You will be able to run `terraform apply` command when you push your code to the `main` branch:
 
 ```
 - name: Terraform Apply
@@ -48,7 +48,7 @@ This will run `Terraform Apply` command when you push your code to the `main` br
   run: terraform apply
 ```
 
-This will run `Terraform Destroy` command when you push your code to the `destroy` branch:
+You will be able to run `terraform destroy` command when you push your code to the `destroy` branch:
 
 ```
 - name: Terraform destroy
