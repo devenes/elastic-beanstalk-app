@@ -57,7 +57,7 @@ This will run `Terraform Destroy` command when you push your code to the `destro
   run: terraform destroy
 ```
 
-# Store your Terraform state in S3
+# Store your Terraform state in S3 Bucket 
 
 You need store your Terraform state in S3 bucket that you created previously. S3 bucket details are defined in the `backend.tfvars` file under the `prod` directory. You can change the bucket name and region by editing the `backend.tfvars` file.
 
@@ -67,9 +67,22 @@ key    = "ecs/prod/terraform.tfstate"
 region = "us-east-2"
 ```
 
-Storing your Terraform state in S3 bucket helps you to manage your Terraform operations. For example, you can backup your Terraform state before you destroy your infrastructure. And you can destroy your whole infrastructure when you need to. So when you try to destroy your infrastructure, Terraform will check if the state file exists in the S3 bucket. If the state file exists, Terraform will destroy your infrastructure that you created before with `Terraform Apply` command (Even if you build your infrastructure automatically with GitHub Actions).
+Storing your Terraform state in S3 bucket helps you to manage your Terraform operations. For example, you can backup your Terraform state before you destroy your infrastructure. And you can destroy your whole infrastructure when you need to. So when you try to destroy your infrastructure, Terraform will check if the state file exists in the S3 bucket. If the state file exists, Terraform will destroy your infrastructure that you created before with `Terraform Apply` command (Even if you build your infrastructure automatically committing with GitHub Actions).
 
 Check the [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html) documentation for more information.
+
+# Define Solution Stack
+
+You need to define your application version number and platform operating system version number on AWS that you want to use for deployment under `aws_elastic_beanstalk_environment` source section in main Terraform file called `eb_app.tf` in this project. 
+
+- Stacking fails in Terraform stages when you type a value for `solution_stack_name` if it is not valid or not supported in Amazon Web Services (AWS).
+
+```
+solution_stack_name = "64bit Amazon Linux 2 v3.3.11 running Python 3.8"
+description         = "environment for flask app"
+```
+
+- If you write something doesn't match with the AWS documentation, Terraform build will fail.
 
 ---
 
