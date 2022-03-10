@@ -35,6 +35,8 @@ AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 ```
 
+- Your Elastic Beanstalk resources must have globally unique names.
+
 # Trigger your Terraform deployment with GitHub Actions
 
 When you create GitHub Action workflow, you can run `Terraform Apply` and `Terraform Destroy` stages automatically by pushing your code to GitHub repository. You can seperate  stages with adding the following commands to your GitHub Action workflow:
