@@ -39,7 +39,7 @@ AWS_SECRET_ACCESS_KEY
 
 # Trigger your Terraform deployment with GitHub Actions
 
-When you create GitHub Action workflow, you can run `Terraform Apply` and `Terraform Destroy` stages automatically by pushing your code to GitHub repository. You can seperate  stages with adding the following commands to your GitHub Action workflow:
+When you create GitHub Action workflow, you can run `Terraform Apply` and `Terraform Destroy` stages automatically by pushing your code to GitHub repository. You can seperate stages with adding the following commands to your GitHub Action workflow:
 
 You will be able to run `terraform apply` command when you push your code to the `main` branch:
 
@@ -59,7 +59,7 @@ You will be able to run `terraform destroy` command when you push your code to t
   run: terraform destroy
 ```
 
-# Store your Terraform state in S3 Bucket 
+# Store your Terraform state in S3 Bucket
 
 You need store your Terraform state in S3 bucket that you created previously. S3 bucket details are defined in the `backend.tfvars` file under the `prod` directory. You can change the bucket name and region by editing the `backend.tfvars` file.
 
@@ -75,7 +75,7 @@ Check the [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html)
 
 # Define Solution Stack
 
-You need to define your application version number and platform operating system version number on AWS that you want to use for deployment under `aws_elastic_beanstalk_environment` source section in main Terraform file called `eb_app.tf` in this project. 
+You need to define your application version number and platform operating system version number on AWS that you want to use for deployment under `aws_elastic_beanstalk_environment` source section in main Terraform file called `eb_app.tf` in this project.
 
 - Deployment fails in Terraform stages when you type a value for `solution_stack_name` if it is not valid or not supported in Amazon Web Services (AWS).
 
@@ -123,7 +123,18 @@ Check out the [GitHub Actions Documentation](https://help.github.com/en/actions/
 
 # Output:
 
-![screenshot](</images/screenshot%20(4).png>)
-![screenshot](</images/screenshot%20(3).png>)
-![screenshot](</images/screenshot%20(1).png>)
-![screenshot](</images/screenshot%20(2).png>)
+<!-- ![screenshot](</images/screenshot%20(4).png>) -->
+
+<img src="https://raw.githubusercontent.com/devenes/elastic-beanstalk-app/master/images/screenshot%20(4).png" alt="screenshot" width=500>
+
+<!-- ![screenshot](</images/screenshot%20(3).png>) -->
+
+<img src="https://raw.githubusercontent.com/devenes/elastic-beanstalk-app/master/images/screenshot%20(3).png" alt="screenshot" width="500" >
+
+<!-- ![screenshot](</images/screenshot%20(1).png>) -->
+
+<img src="https://raw.githubusercontent.com/devenes/elastic-beanstalk-app/master/images/screenshot%20(1).png" alt="screenshot 1" width="500">
+
+<!-- ![screenshot](</images/screenshot%20(2).png>) -->
+
+<img src="https://raw.githubusercontent.com/devenes/elastic-beanstalk-app/master/images/screenshot%20(2).png" alt="screenshot 2" width="500">
