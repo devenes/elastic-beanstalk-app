@@ -4,3 +4,6 @@ variable "environment" {
 variable "project" {
   type = string
 }
+variable "keypair" {
+  type = string
+}
