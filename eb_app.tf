@@ -26,9 +26,9 @@ resource "aws_s3_bucket" "eb_bucket" {
 
 # Define App files to be uploaded to S3
 resource "aws_s3_bucket_object" "eb_bucket_obj" {
-  bucket = aws_s3_bucket.eb_bucket.id
-  key    = "beanstalk/app.zip" # S3 Bucket path to upload app files
-  source = "app.zip"           # Name of the file on GitHub repo to upload to S3
+  bucket = aws_s3_bucket.eb_bucket.id # Name of S3 bucket to upload files to
+  key    = "beanstalk/app.zip"        # S3 Bucket path to upload app files
+  source = "app.zip"                  # Name of the file on GitHub repo to upload to S3
 }
 
 # Define Elastic Beanstalk application
@@ -46,7 +46,7 @@ resource "aws_elastic_beanstalk_application_version" "eb_app_ver" {
 }
 
 resource "aws_elastic_beanstalk_environment" "tfenv" {
-  name                = "enes-eb-tf-env"
+  name                = "enes-eb-tf-env"                                          # Name of the Elastic Beanstalk environment
   application         = aws_elastic_beanstalk_application.eb_app.name             # Elastic Beanstalk application name
   solution_stack_name = "64bit Amazon Linux 2 v3.3.11 running Python 3.8"         # Define current version of the platform
   description         = "environment for flask app"                               # Define environment description
@@ -56,5 +56,10 @@ resource "aws_elastic_beanstalk_environment" "tfenv" {
     namespace = "aws:autoscaling:launchconfiguration" # Define namespace
     name      = "IamInstanceProfile"                  # Define name
     value     = "aws-elasticbeanstalk-ec2-role"       # Define value
+  }
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration" # Define namespace
+    name      = "EC2KeyName"                          # Define name
+    value     = "ssh1"                                # Define your keypair name
   }
 }
